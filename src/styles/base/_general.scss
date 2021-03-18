@@ -1,0 +1,680 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  background-image: url(../img/main-bg.png);
+  background-repeat: no-repeat;
+  background-size: calc(100% + 200px);
+  background-position: center top;
+  background-color: #000;
+}
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 242px;
+  height: 69px;
+  border-radius: 2px;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 22px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  transition: box-shadow .4s ease-in;
+  &:hover {
+    box-shadow: inset 0 0 1000px rgba(0, 0, 0, 0.3);
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+    filter: blur(40px);
+  }
+  &_orange {
+    background: linear-gradient(0deg, #FFAD33, #FFAD33), #8DD294;
+    &::before {
+      background: linear-gradient(0deg, #FED855, #FED855), #8DD294;
+    }
+  }
+  &_green {
+    background: linear-gradient(0deg, #49BC74, #49BC74), #8DD294;
+    &::before {
+      background: linear-gradient(0deg, #49BC74, #49BC74), #8DD294;
+    }
+  }
+  & + .btn {
+    margin-top: 20px;
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  padding-top: 20px;
+  padding-bottom: 354px;
+  min-height: 100vh;
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 45.1vh;
+    background: linear-gradient(180deg, rgba(28, 65, 119, 0) 0%, rgba(2, 10, 22, .8) 100%);
+  }
+  &__container {
+    position: relative;
+    margin: 0 auto;
+  }
+  &__title {
+    margin-top: 70px;
+    margin-bottom: 130px;
+    padding-top: 44px;
+    text-align: center;
+  }
+  &__mega-title {
+    display: inline-block;
+    margin: 12px 0;
+    padding: 17px 22px;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 0.69;
+    text-align: center;
+    letter-spacing: 0.225em;
+    color: #000;
+    background-color: #fff;
+    backdrop-filter: blur(4px);
+  }
+  &__sub-title {
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  &__action {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-top: 20px;
+    text-align: center;
+  }
+  &__trustpilot {
+    margin-top: 54px;
+    text-align: center;
+    &-link {
+      display: inline-block;
+    }
+  }
+  &__streams {
+    margin: 30px 10px;
+    img {
+      width: 100%;
+    }
+  }
+  &__phone {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    line-height: 0;
+    text-align: center;
+  }
+  &__block {
+    &_left {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      text-align: right;
+    }
+    &_right {
+      position: static;
+      text-align: left;
+      .games__list {
+        display: flex;
+        flex-flow: wrap;
+        justify-content: center;
+        margin-top: 60px;
+        margin-bottom: 40px;
+        &-item {
+          position: static;
+          justify-content: center;
+          flex-basis: 50%;
+          margin-bottom: 20px;
+          text-align: center;
+        }
+        &-title {
+          margin-bottom: 15px;
+        }
+      }
+
+    }
+  }
+}
+
+.games__list {
+  &-item {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    &_rust {
+      right: 0;
+      .games__list-image {
+        img {
+          width: 100px;
+        }
+      }
+    }
+    &_tf {
+      right: 0;
+      top: 100px;
+      .games__list-image {
+        transform: scaleX(-1);
+        img {
+          width: 120px;
+        }
+      }
+    }
+    &_csgo {
+      left: 0;
+      .games__list-image{
+        img {
+          width: 80px;
+        }
+      }
+    }
+    &_dota {
+      top: 65px;
+      left: -60px;
+      .games__list-image {
+        img {
+          width: 200px;         
+        }
+      }
+      .games__list-title {
+        transform: translateY(30px);
+      }
+    }
+  }
+  &-title {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    vertical-align: top;
+    color: #fff;
+  }
+  &-image {
+    display: inline-block;
+  }
+}
+
+.payment {
+  display: block;
+  text-align: center;
+  &__title {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  &__list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: #1B2218;
+      svg {
+        width: calc(100% / 2);
+      }
+    }
+    &-item + &-item {
+      margin-left: -10px;
+    }
+  }
+}
+
+.stats {
+  z-index: 2;
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  text-align: center;
+  text-transform: lowercase;
+  color: #fff;
+  &__item + &__item {
+    margin-top: 30px;
+  }
+  &__title {
+    margin-bottom: 8px;
+    font-weight: 900;
+    font-size: 24px;
+    text-shadow: 0px 0px 40px rgba(255, 255, 255, 0.45);
+  }
+  &__text {
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .content {
+    padding-top: 135px;
+    &__container {
+      max-width: 1920px;
+    }
+    &__block {
+      &_left {
+        left: 25%;
+        text-align: right;
+      }
+      &_right {
+        right: 25%;
+        text-align: left;
+      }
+    }
+    &__title {
+      transform: translateX(-33px);
+    }
+    &__mega-title {
+      font-size: 70px;
+    }
+    &__action {
+      .btn:first-child {
+        margin-left: -93px;
+      }
+    }
+    &__streams {
+      left: 8%;
+    }
+    &__phone {
+      right: 9.3%;
+    }
+    &__trustpilot-link {
+      transform: translateX(-50px);
+    }
+  }
+  .stats {
+    transform: translateX(-47px);
+    &__item + &__item {
+      margin-left: 60px;
+    }
+  }
+  .games__list {
+    &-item {
+      align-items: flex-start;
+      &_tf {
+        transform: translate(-138px, 22px);
+        .games__list-title {
+          transform: translate(-81px, 25px);
+        }
+      }
+      &_csgo {
+        transform: translate(-223px, 165px);
+        .games__list-title {
+          transform: translate(-76px, 65px);
+        }
+      }
+      &_dota {
+        transform: translate(-409px, 170px);
+        .games__list-title {
+          transform: translate(114px, 102px);
+        }
+      }
+      &_navi {
+        transform: translate(15px, 521px);
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .content {
+    padding-top: 50px;
+    padding-bottom: 120px;
+    &__title {
+      margin-top: 390px;
+    }
+    &__container {
+      max-width: 1140px;
+    }
+    &__block {
+      &_left {
+        left: 20%;
+      }
+      &_right {
+        right: 25%;
+      }
+    }
+    &__mega-title {
+      font-size: 45px;
+    }
+  }
+  .games__list {
+    &-item {
+      &_rust {
+        transform: translate(76px, 5px);
+        .games__list-title {
+          font-size: 20px;
+          transform: translate(-40px, -7px);
+        }
+        
+      }
+      &_tf {
+        transform: translate(-137px, 22px);
+        .games__list-title {
+          transform: translate(-130px, 26px);
+        }
+      }
+      &_csgo {
+        transform: translate(-185px, 165px);
+        .games__list-image{
+          img {
+            width: 220px;
+          }
+        }
+        .games__list-title {
+          font-size: 36px;
+          transform: translate(-120px, 65px);
+        }
+      }
+      &_dota {
+        transform: translate(-400px, 250px);
+        .games__list-title {
+          transform: translate(-55px, 110px);
+        }
+      }
+      &_navi {
+        transform: translate(50px, 523px);
+      }
+      &_tf,
+      &_dota,
+      &_dao,
+      &_insta {
+        .games__list-title {
+          font-size: 24px;
+        }
+      }
+      &_defi,
+      &_twitch {
+        .games__list-title {
+          font-size: 28px;
+        }
+      }
+      &_esports {
+        .games__list-title {
+          font-size: 36px;
+        }
+      }
+      &_navi {
+        .games__list-title {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    background-size: cover;
+    background-position: center;
+  }
+  .payment {
+    &__title {
+      margin-bottom: 17px;
+      font-size: 24px;
+    }
+    &__list-item {
+      width: 75.62px;
+      height: 75.62px;
+      svg {
+        width: auto;
+      }
+    }
+  }
+  .content {
+    &__title {
+      margin-top: 360px;
+      margin-bottom: 37px;
+    }
+    &__container {
+      max-width: 960px;
+    }
+    &__block {
+      top: 4.15%;
+      &_left {
+        left: 30%;
+      }
+      &_right {
+        right: 30%;
+        position: absolute;
+        .games__list {
+          display: block;
+          &-item {
+            position: absolute;
+            flex-flow: row-reverse;
+            align-items: center;
+            margin-bottom: 0;
+          }
+          &-title {
+            margin-bottom: 0;
+            text-align: left;
+          }
+          .games__list-item + .games__list-item {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+  .games__list {
+    &-item {
+      &_rust {
+        left: 0;
+        right: auto;
+        transform: translate(-80px, 8px);
+        .games__list {
+          flex-flow: row-reverse;
+        }
+        .games__list-image {
+          img {
+            width: auto;
+          }
+        }
+      }
+      &_tf {
+        top: 0;
+        right: auto;
+        left: 0;
+        transform: translate(-290px, 80px);
+        .games__list-image {
+          transform: none;
+          img {
+            width: auto;
+          }
+        }
+      }
+      &_csgo {
+        transform: translate(-285px, 209px);
+        .games__list-image {
+          img {
+            width: 220px;
+          }
+        }
+      }
+      &_dota {
+        transform: translate(-450px, 270px);
+        left: 0;
+        .games__list-image {
+          img {
+            width: auto;
+          }
+        }
+      }
+      &_dao {
+        transform: translate(-50px, -36px);
+        .games__list-title {
+          margin-left: 15px;
+        }
+      }
+      &_defi {
+        transform: translate(-5px, 82px);
+        .games__list-title {
+          margin-left: 21px;
+          text-transform: none;
+        }
+      }
+      &_esports {
+        transform: translate(24px, 193px);
+        .games__list-title {
+          margin-left: 21px;
+          text-transform: none;
+          transform: translateY(-5px);
+        }
+      }
+      &_twitch {
+        transform: translate(-7px, 309px);
+        white-space: nowrap;
+        .games__list-title {
+          margin-left: 21px;
+        }
+      }
+      &_insta {
+        transform: translate(76px, 419px);
+        white-space: nowrap;
+        .games__list-title {
+          margin-left: 25px;
+        }
+      }
+      &_navi {
+        padding: 12px 15.44px;
+        background: #1A1C1C;
+        border-radius: 4px;
+        white-space: nowrap;
+        transform: translate(50px, 523px);
+        .games__list-title {
+          margin-left: 24px;
+        }
+      }
+    }
+  }
+  .stats {
+    flex-flow: row;
+    &__item + &__item {
+      margin-top: 0;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding-top: 40px;
+    &__container {
+      max-width: 720px;
+    }
+    &__title {
+      margin-top: 190px;
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  body {
+    background-size: calc(100% + 50px);
+  }
+  .btn {
+    & + .btn {
+      margin-left: 12px;
+    }
+  }
+  .content {
+    padding-bottom: 380px;
+    &__container {
+      max-width: 540px;
+    }
+    &__title {
+      margin-top: 190px;
+    }
+    &__mega-title {
+      font-size: 20px;
+    }
+    &__action {
+      display: block;
+    }
+    &__streams {
+      position: absolute;
+      bottom: 40px;
+      left: 10px;
+    }
+    &__phone {
+      left: auto;
+      right: 10px;
+      bottom: 0;
+    }
+  }
+  .games__list {
+    &-item {
+      &_tf {
+        right: -20px;
+        .games__list-image {
+          img {
+            width: 220px;
+          }
+        }
+      }
+      &_csgo {
+        .games__list-image{
+          img {
+            width: 120px;
+          }
+        }
+      }
+      &_dota {
+        left: -120px;
+        .games__list-image {
+          img {
+            width: 350px;
+          }
+        }
+        .games__list-title {
+          transform: translateY(60px);
+        }
+      }
+    }
+  }
+  .stats {
+    flex-flow: column;
+    &__item + &__item {
+      margin-left: 20px;
+    }
+  }
+}
